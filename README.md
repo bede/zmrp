@@ -1,12 +1,12 @@
 ## ZeptoMetrix Respiratory Panel 2.1 (RP2.1) genome sequences
 
-Draft quality viral genome sequences contained in the [ZeptoMetrix Respiratory Panel 2.1](https://www.zeptometrix.com/us/en/nattrol-respiratory-panel-21-rp21-controls-12-x-03ml-3084), a DNA+RNA positive control for clinical metagenomics.
+Draft quality (>95% complete) viral genome sequences contained in the [ZeptoMetrix Respiratory Panel 2.1](https://www.zeptometrix.com/us/en/nattrol-respiratory-panel-21-rp21-controls-12-x-03ml-3084), a DNA+RNA positive control for clinical metagenomics. Some genomes excluded due to low assembly coverage.
 
 DNA libraries prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion. Basecalled with Dorado 5 HAC. Consensus sequences were generated using Minimap2 and Kindel.
 
 ## Genomes
 
-| Organism | Reference | Status |
+| Genome | Reference | Status |
 |----------|-------------------|--------|
 | Adenovirus Type 1 | AC_000017.1 | 🚧 |
 | Adenovirus Type 3 | DQ099432.4 | ✅ |
