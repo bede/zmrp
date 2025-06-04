@@ -12,8 +12,6 @@ DNA libraries prepared with SMART-9N and ONT protocols for sequencing using ONT 
 | Adenovirus Type 3 | DQ099432.4 | ✅ |
 | Adenovirus Type 31 | AM749299.1 | 🚧 |
 | Coronavirus 229E | OZ035244.1 | 🚧 |
-| Coronavirus NL63 | KF530110.1 | 🚧 |
-| Coronavirus OC43 | ON376724.1 | 🚧 |
 | Influenza A 2009 H1N1pdm A/NY/02/2009 | KT180555.1 | 🚧 |
 | Influenza A H3N2 A/Brisbane/10/07 | KJ609211.1 | 🚧 |
 | Influenza AH1 A/New Caledonia/20/99 | CY033629.1 | 🚧 |
