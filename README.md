@@ -23,6 +23,6 @@ DNA libraries prepared with SMART-9N and ONT protocols for sequencing using ONT 
 | Parainfluenza Type 2 | AF533012.1 | ✅ |
 | Parainfluenza Type 3 | KY674922.1 | ✅ |
 | Parainfluenza Type 4 | EU627591.1 | 🚧 |
-| Rhinovirus 1A | KC894166.1 | 🚧 |
+| Rhinovirus 1A | KC894166.1 | ✅ |
 | RSV A | KY967364.1 | 🚧 |
 | SARS-CoV-2 USA-WA1/2020 | ON311149.1 | ✅ |
