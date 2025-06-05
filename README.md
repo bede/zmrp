@@ -2,9 +2,9 @@
 
 Draft quality genome sequences for virus genomes included in the [ZeptoMetrix Respiratory Panel 2.1](https://www.zeptometrix.com/us/en/nattrol-respiratory-panel-21-rp21-controls-12-x-03ml-3084), a DNA & RNA positive control panel for metagenomics. Bacterial genomes and coronaviruses HKU-1 and NL63 are excluded due to poor coverage, despite deep sequencing using a variety of protocols.
 
-DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion. Dorado 5 HAC was used for basecalling. Consensus sequences were made with Minimap2 and Kindel.
+DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion. Dorado 4.3 HAC was used for basecalling. Reads were mapped to nearby references with Minimap2, consensus called with Kindel, and polished with Medaka.
 
-Use with [knownknowns](https://github.com/bede/knownknowns) to quickly estimate positive control containment in a FASTQ.
+Use with [knownknowns](https://github.com/bede/knownknowns) to quickly estimate positive control containment in a FASTQ file.
 
 ## Genomes
 
