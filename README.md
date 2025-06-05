@@ -8,27 +8,27 @@ Use with [knownknowns](https://github.com/bede/knownknowns) to quickly estimate 
 
 ## Genomes
 
-| Genome | Abbreviation | Reference | Type | Status |
+| Genome | Abbreviation | Reference | Type | Length |
 |----------|-------------|-------------------|-------------|--------|
-| Adenovirus Type 1 | AdV-1 | AC_000017.1 | DNA | ✅ |
-| Adenovirus Type 3 | AdV-B | DQ099432.4 | DNA | ✅ |
-| Adenovirus Type 31 | AdV-31 | AM749299.1 | DNA | ✅ |
-| *Bordetella parapertussis* A747 |  |  | DNA | ❌ (low cov) |
-| *Bordetella pertussis* A639 |  |  | DNA | ❌ (low cov) |
-| *Chlamydia pneumoniae* IOL-207 |  |  | DNA | ❌ (low cov) |
-| Coronavirus 229E | HCoV-229E | OZ035244.1 | RNA | ✅ |
-| Coronavirus HKU-1 | | | RNA | ❌ (low cov) |
-| Coronavirus NL63 |  |  | RNA | ❌ (low cov) |
-| Influenza A 2009 H1N1pdm A/NY/02/2009 | Flu-A-H1N1-S | KT180555.1 | RNA | ✅ |
-| Influenza A H3N2 A/Brisbane/10/07 | Flu-A-H3N2 | KJ609211.1 | RNA | ✅ |
-| Influenza AH1 A/New Caledonia/20/99 | Flu-A-H1N1-F | CY033629.1 | RNA | ✅ |
-| Influenza B B/Florida/02/06 | Flu-B | CY018371.1 | RNA | ✅ |
-| Metapneumovirus 8 Peru6-2003 | HMPV | OL794390.1 | RNA | ✅ |
-| *Mycoplasma pneumoniae* M129 |  |  | DNA | ❌ (low cov) |
-| Parainfluenza Type 1 | HPIV-1 | PV660323.1 | RNA | ✅ |
-| Parainfluenza Type 2 | HPIV-2 | AF533012.1 | RNA | ✅ |
-| Parainfluenza Type 3 | HPIV-3 | KY674922.1 | RNA | ✅ |
-| Parainfluenza Type 4 | HPIV-4 | EU627591.1 | RNA | ✅ |
-| Rhinovirus 1A | HRV-1A | KC894166.1 | RNA | ✅ |
-| RSV A | RSV-A | KY967364.1 | RNA | ✅ |
-| SARS-CoV-2 USA-WA1/2020 | SARS-CoV-2 | ON311149.1 | RNA | ✅ |
+| Adenovirus Type 1 | AdV-1 | AC_000017.1 | DNA | 35,435 |
+| Adenovirus Type 3 | AdV-B | DQ099432.4 | DNA | 35,054 |
+| Adenovirus Type 31 | AdV-31 | AM749299.1 | DNA | 34,174 |
+| *Bordetella parapertussis* A747 |  |  | DNA |  |
+| *Bordetella pertussis* A639 |  |  | DNA |  |
+| *Chlamydia pneumoniae* IOL-207 |  |  | DNA |  |
+| Coronavirus 229E | HCoV-229E | OZ035244.1 | RNA | 26,846 |
+| Coronavirus HKU-1 | | | RNA |  |
+| Coronavirus NL63 |  |  | RNA |  |
+| Influenza A 2009 H1N1pdm A/NY/02/2009 | Flu-A-H1N1-S | KT180555.1 | RNA | 13,126 |
+| Influenza A H3N2 A/Brisbane/10/07 | Flu-A-H3N2 | KJ609211.1 | RNA | 13,277 |
+| Influenza AH1 A/New Caledonia/20/99 | Flu-A-H1N1-F | CY033629.1 | RNA | 13,288 |
+| Influenza B B/Florida/02/06 | Flu-B | CY018371.1 | RNA | 14,222 |
+| Metapneumovirus 8 Peru6-2003 | HMPV | OL794390.1 | RNA | 13,149 |
+| *Mycoplasma pneumoniae* M129 |  |  | DNA |  |
+| Parainfluenza Type 1 | HPIV-1 | PV660323.1 | RNA | 15,394 |
+| Parainfluenza Type 2 | HPIV-2 | AF533012.1 | RNA | 15,654 |
+| Parainfluenza Type 3 | HPIV-3 | KY674922.1 | RNA | 15,382 |
+| Parainfluenza Type 4 | HPIV-4 | EU627591.1 | RNA | 17,133 |
+| Rhinovirus 1A | HRV-1A | KC894166.1 | RNA | 7,100 |
+| RSV A | RSV-A | KY967364.1 | RNA | 14,806 |
+| SARS-CoV-2 USA-WA1/2020 | SARS-CoV-2 | ON311149.1 | RNA | 29,776 |

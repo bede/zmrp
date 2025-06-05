@@ -26,6 +26,36 @@ for file in genomes/segmented/*.fa; do
     fi
 done
 
+# Count sequence lengths and output to lengths.csv
+echo "id,length" > lengths.csv
+
+# Process the combined segments file to count sequence lengths
+awk '
+BEGIN { 
+    header = ""
+    seq = ""
+}
+/^>/ {
+    if (header != "") {
+        # Remove the ">" from header and print previous sequence length
+        gsub(/^>/, "", header)
+        print header "," length(seq)
+    }
+    header = $0
+    seq = ""
+}
+!/^>/ {
+    seq = seq $0
+}
+END {
+    if (header != "") {
+        # Process the last sequence
+        gsub(/^>/, "", header)
+        print header "," length(seq)
+    }
+}' zmrp21.combined-segments.fa >> lengths.csv
+
 echo "Done"
 echo "- zmrp21.fa: Contains all individual genome files"
 echo "- zmrp21.combined-segments.fa: Contains individual genomes plus segmented genomes with segments combined"
+echo "- lengths.csv: Contains sequence IDs and their lengths in base pairs"
