@@ -2,7 +2,17 @@
 
 # Concatenate genomes from genomes/ and genomes/segmented/
 
-cat genomes/*.fa genomes/segmented/*.fa > zmrp21.fa
+# Concatenate genomes ensuring proper line breaks between files
+> zmrp21.fa
+for file in genomes/*.fa genomes/segmented/*.fa; do
+    if [ -f "$file" ]; then
+        cat "$file" >> zmrp21.fa
+        # Ensure file ends with newline
+        if [ -n "$(tail -c1 "$file")" ]; then
+            echo >> zmrp21.fa
+        fi
+    fi
+done
 
 > zmrp21.combined-segments.fa
 
