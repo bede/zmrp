@@ -14,10 +14,10 @@ for file in genomes/*.fa genomes/segmented/*.fa; do
     fi
 done
 
-> zmrp21.combined-segments.fa
+> zmrp21.combined.fa
 
 # Add all non-segmented genomes
-cat genomes/*.fa >> zmrp21.combined-segments.fa
+cat genomes/*.fa >> zmrp21.combined.fa
 
 # Process each segmented genome
 for file in genomes/segmented/*.fa; do
@@ -31,8 +31,8 @@ for file in genomes/segmented/*.fa; do
         sequences=$(grep -v "^>" "$file" | tr -d '\n')
         
         # Write the first header and concatenated sequences
-        echo "$first_header" >> zmrp21.combined-segments.fa
-        echo "$sequences" >> zmrp21.combined-segments.fa
+        echo "$first_header" >> zmrp21.combined.fa
+        echo "$sequences" >> zmrp21.combined.fa
     fi
 done
 
@@ -63,9 +63,31 @@ END {
         gsub(/^>/, "", header)
         print header "," length(seq)
     }
-}' zmrp21.combined-segments.fa >> lengths.csv
+}' zmrp21.combined.fa >> lengths.csv
+
+# Separate DNA (adenovirus) and RNA viruses from combined file
+> zmrp21.combined.dna-viruses.fa
+> zmrp21.combined.rna-viruses.fa
+
+awk '
+/^>/ {
+    header = $0
+    is_adv = (header ~ /AdV/)
+    next
+}
+{
+    if (is_adv) {
+        print header >> "zmrp21.combined.dna-viruses.fa"
+        print $0 >> "zmrp21.combined.dna-viruses.fa"
+    } else {
+        print header >> "zmrp21.combined.rna-viruses.fa"
+        print $0 >> "zmrp21.combined.rna-viruses.fa"
+    }
+}' zmrp21.combined.fa
 
 echo "Done"
 echo "- zmrp21.fa: Contains all individual genome files"
-echo "- zmrp21.combined-segments.fa: Contains individual genomes plus segmented genomes with segments combined"
+echo "- zmrp21.combined.fa: Contains individual genomes plus segmented genomes with segments combined"
+echo "- zmrp21.combined.dna-viruses.fa: Contains adenovirus genomes (DNA viruses)"
+echo "- zmrp21.combined.rna-viruses.fa: Contains all other viral genomes (RNA viruses)"
 echo "- lengths.csv: Contains sequence IDs and their lengths in base pairs"
