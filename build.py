@@ -63,18 +63,24 @@ def main():
     # Load metadata
     metadata = load_metadata(Path('genomes.tsv'))
 
-    # Collect all sequences for zmrp21.fa (including individual segments)
-    all_sequences = []
-    # Collect sequences for zmrp21.combined.fa (segments merged)
+    # Collect sequences with segments merged (default)
     combined_sequences = []
+    # Collect sequences with individual segments
+    segments_sequences = []
+    # Collect rna-virus segments separately
+    rna_virus_segments = []
 
     for accession, info in metadata.items():
         path = get_genome_path(accession, info)
         is_segmented = info['segmented'] == 'yes'
         sequences = read_fasta(path, sort_segments=is_segmented)
 
-        # Add all individual sequences to zmrp21.fa
-        all_sequences.extend(sequences)
+        # Add all individual sequences to segments version
+        segments_sequences.extend(sequences)
+
+        # Collect rna-virus segments
+        if info['category'] == 'rna-virus':
+            rna_virus_segments.extend(sequences)
 
         if is_segmented:
             # Merge all segments into single sequence
@@ -85,13 +91,13 @@ def main():
             # Non-segmented: add as-is
             combined_sequences.extend(sequences)
 
-    # Write zmrp21.fa
-    write_fasta(Path('zmrp21.fa'), all_sequences)
-    print(f"zmrp21.fa: {len(all_sequences)} sequences")
+    # Write zmrp21.fa (combined is default)
+    write_fasta(Path('zmrp21.fa'), combined_sequences)
+    print(f"zmrp21.fa: {len(combined_sequences)} sequences")
 
-    # Write zmrp21.combined.fa
-    write_fasta(Path('zmrp21.combined.fa'), combined_sequences)
-    print(f"zmrp21.combined.fa: {len(combined_sequences)} sequences")
+    # Write zmrp21.segments.fa (individual segments)
+    write_fasta(Path('zmrp21.segments.fa'), segments_sequences)
+    print(f"zmrp21.segments.fa: {len(segments_sequences)} sequences")
 
     # Write lengths.csv
     with open('lengths.csv', 'w') as f:
@@ -124,9 +130,13 @@ def main():
 
     # Write category files
     for category, sequences in category_sequences.items():
-        path = Path(f'zmrp21.combined.{category}.fa')
+        path = Path(f'zmrp21.{category}.fa')
         write_fasta(path, sequences)
         print(f"{path}: {len(sequences)} sequences")
+
+    # Write rna-viruses segments file
+    write_fasta(Path('zmrp21.rna-viruses.segments.fa'), rna_virus_segments)
+    print(f"zmrp21.rna-viruses.segments.fa: {len(rna_virus_segments)} sequences")
 
     print("\nDone!")
 
