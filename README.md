@@ -2,13 +2,13 @@
 
 Draft quality genome sequences for viruses included in the [ZeptoMetrix Respiratory Panel 2.1](https://www.zeptometrix.com/us/en/nattrol-respiratory-panel-21-rp21-controls-12-x-03ml-3084), a DNA & RNA verification panel for metagenomics. Bacterial genomes and coronaviruses HKU-1 and NL63, and OC43 are excluded due to poor coverage, despite deep sequencing using a variety of protocols.
 
-DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion by Mia Weaver at the University of Birmingham. High accuracy basecalling was performed with Dorado. Reads were mapped to nearby references with Minimap2, consensus called with Kindel, and polished with Medaka.
+DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion by Mia Weaver at the University of Birmingham. High accuracy basecalling was performed with Dorado. Reads were mapped to nearby references with Minimap2, consensus called with Kindel, and polished with Medaka. Bacterial reads were basecalled (`sup`) and polished in `--bacteria` mode using Dorado 1.3.1.
 
 Use [grate](https://github.com/bede/grate) or [knownknowns](https://github.com/bede/knownknowns) to estimate containment of these genomes within read datasets.
 
 ## Genomes
 
-| Genome | Abbreviation | Reference | Type | Length | Pool | Assembled |
+| Genome | Abbreviation | Reference | Type | Length | Pool | Assembly |
 |----------|-------------|-------------------|-------------|--------|--------|--------|
 | Adenovirus Type 1 | AdV-1 | AC_000017.1 | DNA | 35,676 | 1 | ✅ |
 | Adenovirus Type 3 | AdV-3 | DQ099432.4 | DNA | 35,072 | 1 | ✅ |
@@ -29,10 +29,18 @@ Use [grate](https://github.com/bede/grate) or [knownknowns](https://github.com/b
 | Coronavirus HKU-1 (partial) |  |  | RNA |  | 2 | ❌ |
 | Coronavirus NL63 |  |  | RNA |  | 2 | ❌ |
 | Coronavirus OC43 |  |  | RNA |  | 2 | ❌ |
-| *Bordetella parapertussis* A747 |  | NZ_CP020655.1 | DNA | 4,773,555 | 2 | ⚠️ 31% cov |
-| *Bordetella pertussis* A639 |  | CP046993.1 | DNA | 4,181,399 | 2 | ⚠️ 31% cov |
-| *Chlamydia pneumoniae* IOL-207 |  | AE001363.1 | DNA | 1,245,525 | 1 | ⚠️ 32% cov |
-| *Mycoplasma pneumoniae* M129 |  | U00089.2 | DNA | 816,284 | 1 | ⚠️ 32% cov |
+| *Bordetella parapertussis* A747 | Bpara | NZ_CP020655.1 | DNA | 4,773,555 | 2 | ⚠️ polished using 31% read cov |
+| *Bordetella pertussis* A639 | Bpert | CP046993.1 | DNA | 4,181,399 | 2 | ⚠️ polished using 31% read cov |
+| *Chlamydia pneumoniae* IOL-207 | Cpneu | AE001363.1 | DNA | 1,245,525 | 1 | ⚠️ polished using 32% read cov |
+| *Mycoplasma pneumoniae* M129 | Mpneu | U00089.2 | DNA | 816,284 | 1 | ⚠️ polished using 32% read cov |
 
 
+
+## Development
+
+Rebuild outputs:
+
+```
+uv run build.sh
+```
 
