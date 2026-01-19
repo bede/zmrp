@@ -29,10 +29,10 @@ Use [grate](https://github.com/bede/grate) or [knownknowns](https://github.com/b
 | Coronavirus HKU-1 (partial) |  |  | RNA |  | 2 | ❌ |
 | Coronavirus NL63 |  |  | RNA |  | 2 | ❌ |
 | Coronavirus OC43 |  |  | RNA |  | 2 | ❌ |
-| *Bordetella parapertussis* A747 |  |  | DNA |  | 2 | ❌ |
-| *Bordetella pertussis* A639 |  |  | DNA |  | 2 | ❌ |
-| *Chlamydia pneumoniae* IOL-207 |  |  | DNA |  | 1 | ❌ |
-| *Mycoplasma pneumoniae* M129 |  |  | DNA |  | 1 | ❌ |
+| *Bordetella parapertussis* A747 |  | NZ_CP020655.1 | DNA | 4,773,555 | 2 | ⚠️ 31% cov |
+| *Bordetella pertussis* A639 |  | CP046993.1 | DNA | 4,181,399 | 2 | ⚠️ 31% cov |
+| *Chlamydia pneumoniae* IOL-207 |  | AE001363.1 | DNA | 1,245,525 | 1 | ⚠️ 32% cov |
+| *Mycoplasma pneumoniae* M129 |  | U00089.2 | DNA | 816,284 | 1 | ⚠️ 32% cov |
 
 
 

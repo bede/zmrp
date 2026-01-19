@@ -65,22 +65,28 @@ END {
     }
 }' zmrp21.combined.fa >> lengths.csv
 
-# Separate DNA (adenovirus) and RNA viruses from combined file
+# Separate DNA viruses, RNA viruses, and bacteria from combined file
 > zmrp21.combined.dna-viruses.fa
 > zmrp21.combined.rna-viruses.fa
+> zmrp21.combined.bacteria.fa
 
 awk '
 /^>/ {
     header = $0
     is_adv = (header ~ /AdV/)
+    is_bacteria = (header ~ /Cpneu|Bpert|Bpara|Mpneu/)
+    printed_header = 0
     next
 }
 {
-    if (is_adv) {
-        print header >> "zmrp21.combined.dna-viruses.fa"
+    if (is_bacteria) {
+        if (!printed_header) { print header >> "zmrp21.combined.bacteria.fa"; printed_header = 1 }
+        print $0 >> "zmrp21.combined.bacteria.fa"
+    } else if (is_adv) {
+        if (!printed_header) { print header >> "zmrp21.combined.dna-viruses.fa"; printed_header = 1 }
         print $0 >> "zmrp21.combined.dna-viruses.fa"
     } else {
-        print header >> "zmrp21.combined.rna-viruses.fa"
+        if (!printed_header) { print header >> "zmrp21.combined.rna-viruses.fa"; printed_header = 1 }
         print $0 >> "zmrp21.combined.rna-viruses.fa"
     }
 }' zmrp21.combined.fa
@@ -90,4 +96,5 @@ echo "- zmrp21.fa: Contains all individual genome files"
 echo "- zmrp21.combined.fa: Contains individual genomes plus segmented genomes with segments combined"
 echo "- zmrp21.combined.dna-viruses.fa: Contains adenovirus genomes (DNA viruses)"
 echo "- zmrp21.combined.rna-viruses.fa: Contains all other viral genomes (RNA viruses)"
+echo "- zmrp21.combined.bacteria.fa: Contains bacterial genomes"
 echo "- lengths.csv: Contains sequence IDs and their lengths in base pairs"
