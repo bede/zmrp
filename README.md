@@ -41,6 +41,6 @@ Use [grate](https://github.com/bede/grate) or [knownknowns](https://github.com/b
 Rebuild outputs:
 
 ```
-uv run build.sh
+uv run build.py
 ```
 

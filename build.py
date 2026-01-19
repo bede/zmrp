@@ -138,6 +138,11 @@ def main():
     write_fasta(Path('zmrp21.rna-viruses.segments.fa'), rna_virus_segments)
     print(f"zmrp21.rna-viruses.segments.fa: {len(rna_virus_segments)} sequences")
 
+    # Write combined viruses file (dna + rna)
+    viruses = category_sequences['dna-viruses'] + category_sequences['rna-viruses']
+    write_fasta(Path('zmrp21.viruses.fa'), viruses)
+    print(f"zmrp21.viruses.fa: {len(viruses)} sequences")
+
     print("\nDone!")
 
 
