@@ -1,10 +1,8 @@
 ## ZeptoMetrix Respiratory Panel 2.1 genome sequences
 
-Draft quality genome sequences for viruses included in the [ZeptoMetrix Respiratory Panel 2.1](https://www.zeptometrix.com/us/en/nattrol-respiratory-panel-21-rp21-controls-12-x-03ml-3084), a DNA & RNA verification panel for metagenomics. Bacterial genomes and coronaviruses HKU-1 and NL63, and OC43 are excluded due to poor coverage, despite deep sequencing using a variety of protocols.
+Draft quality genome sequences for bacteria and most viruses included in the [ZeptoMetrix Respiratory Panel 2.1](https://www.zeptometrix.com/us/en/nattrol-respiratory-panel-21-rp21-controls-12-x-03ml-3084), a DNA & RNA verification panel for metagenomics. Coronavirus HKU-1 and NL63, and OC43 genomes are excluded due to poor coverage, despite deep sequencing of multiple batches of material using a variety of protocols. Bacterial genomes are of lower quality than viral sequences, again due to limited sequencing coverage despite best efforts.
 
-DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion by Mia Weaver at the University of Birmingham. High accuracy basecalling was performed with Dorado. Reads were mapped to nearby references with Minimap2, consensus called with Kindel, and polished with Medaka. Bacterial reads were basecalled (`sup`) and polished in `--bacteria` mode using Dorado 1.3.1.
-
-Use [grate](https://github.com/bede/grate) or [knownknowns](https://github.com/bede/knownknowns) to estimate containment of these genomes within read datasets.
+DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using ONT Promethion by Mia Weaver and Dominika Stepniak at the University of Birmingham. High accuracy basecalling was performed with Dorado 1.0.1. Reads were mapped to nearby references with Minimap2, consensus called with Kindel, and polished with Medaka. Bacterial assemblies were generated using [ONT's publicly available POD5s](https://epi2me.nanoporetech.com/pathogen_surveillance_2025.09) rebasecalled with super accuracy, and polished in `--bacteria` mode using Dorado 1.3.1.
 
 ## Genomes
 
@@ -29,12 +27,10 @@ Use [grate](https://github.com/bede/grate) or [knownknowns](https://github.com/b
 | Coronavirus HKU-1 (partial) |  |  | RNA |  | 2 | ❌ |
 | Coronavirus NL63 |  |  | RNA |  | 2 | ❌ |
 | Coronavirus OC43 |  |  | RNA |  | 2 | ❌ |
-| *Bordetella parapertussis* A747 | Bpara | NZ_CP020655.1 | DNA | 4,773,555 | 2 | ⚠️ polished using 31% read cov |
-| *Bordetella pertussis* A639 | Bpert | CP046993.1 | DNA | 4,181,399 | 2 | ⚠️ polished using 31% read cov |
-| *Chlamydia pneumoniae* IOL-207 | Cpneu | AE001363.1 | DNA | 1,245,525 | 1 | ⚠️ polished using 32% read cov |
-| *Mycoplasma pneumoniae* M129 | Mpneu | U00089.2 | DNA | 816,284 | 1 | ⚠️ polished using 32% read cov |
-
-
+| *Bordetella parapertussis* A747 | Bpara | NZ_CP020655.1 | DNA | 4,773,555 | 2 | ⚠️ polished using <50% read cov |
+| *Bordetella pertussis* A639 | Bpert | CP046993.1 | DNA | 4,181,399 | 2 | ⚠️ polished using <50% read cov |
+| *Chlamydia pneumoniae* IOL-207 | Cpneu | AE001363.1 | DNA | 1,245,525 | 1 | ⚠️ polished using <50% read cov |
+| *Mycoplasma pneumoniae* M129 | Mpneu | U00089.2 | DNA | 816,284 | 1 | ⚠️ polished using <50% read cov |
 
 ## Development
 
