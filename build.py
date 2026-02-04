@@ -44,19 +44,19 @@ def write_fasta(path: Path, sequences: list[tuple[str, str]]) -> None:
 
 
 def load_metadata(path: Path) -> dict[str, dict]:
-    """Load genome metadata from TSV file, keyed by abbreviation."""
+    """Load genome metadata from TSV file, keyed by name."""
     genomes = {}
     with open(path) as f:
         for row in csv.DictReader(f, delimiter='\t'):
-            genomes[row['abbreviation']] = row
+            genomes[row['name']] = row
     return genomes
 
 
-def get_genome_path(abbreviation: str, metadata: dict) -> Path:
+def get_genome_path(name: str, metadata: dict) -> Path:
     """Return path to genome file based on whether it's segmented."""
     if metadata['segmented'] == 'true':
-        return Path('genomes/segmented') / f"{abbreviation}.fa"
-    return Path('genomes') / f"{abbreviation}.fa"
+        return Path('genomes/segmented') / f"{name}.fa"
+    return Path('genomes') / f"{name}.fa"
 
 
 def main():
@@ -70,8 +70,8 @@ def main():
     # Collect rna-virus segments separately
     rna_virus_segments = []
 
-    for abbreviation, info in metadata.items():
-        path = get_genome_path(abbreviation, info)
+    for name, info in metadata.items():
+        path = get_genome_path(name, info)
         is_segmented = info['segmented'] == 'true'
         sequences = read_fasta(path, sort_segments=is_segmented)
 
@@ -124,9 +124,9 @@ def main():
     }
 
     for header, seq in combined_sequences:
-        # Extract abbreviation from header (format: ">ABBREV")
-        abbreviation = header[1:].split()[0]
-        info = metadata[abbreviation]
+        # Extract name from header (format: ">ABBREV")
+        name = header[1:].split()[0]
+        info = metadata[name]
         category = category_map[info['category']]
         category_sequences[category].append((header, seq))
 

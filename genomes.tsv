@@ -1,4 +1,4 @@
-abbreviation	name	category	genome	pool	segmented	status	accession
+name	full_name	category	genome	pool	segmented	status	accession
 AdV-1	Adenovirus Type 1	dna-virus	dna	1	false	complete	AC_000017.1
 AdV-3	Adenovirus Type 3	dna-virus	dna	1	false	complete	DQ099432.4
 AdV-31	Adenovirus Type 31	dna-virus	dna	1	false	complete	AM749299.1
