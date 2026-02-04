@@ -27,10 +27,10 @@ DNA libraries were prepared with SMART-9N and ONT protocols for sequencing using
 | Coronavirus HKU-1 (partial) |  |  | RNA |  | 2 | ❌ |
 | Coronavirus NL63 |  |  | RNA |  | 2 | ❌ |
 | Coronavirus OC43 |  |  | RNA |  | 2 | ❌ |
-| *Bordetella parapertussis* A747 | Bpara | NZ_CP020655.1 | DNA | 4,773,555 | 2 | ⚠️ polished using <50% read cov |
-| *Bordetella pertussis* A639 | Bpert | CP046993.1 | DNA | 4,181,399 | 2 | ⚠️ polished using <50% read cov |
-| *Chlamydia pneumoniae* IOL-207 | Cpneu | AE001363.1 | DNA | 1,245,525 | 1 | ⚠️ polished using <50% read cov |
-| *Mycoplasma pneumoniae* M129 | Mpneu | U00089.2 | DNA | 816,284 | 1 | ⚠️ polished using <50% read cov |
+| *Bordetella parapertussis* A747 | Bpara | NZ_CP020655.1 | DNA | 4,774,008 | 2 | ⚠️ polished using <50% read cov |
+| *Bordetella pertussis* A639 | Bpert | CP046993.1 | DNA | 4,181,567 | 2 | ⚠️ polished using <50% read cov |
+| *Chlamydia pneumoniae* IOL-207 | Cpneu | AE001363.1 | DNA | 1,229,934 | 1 | ⚠️ polished using <50% read cov |
+| *Mycoplasma pneumoniae* M129 | Mpneu | U00089.2 | DNA | 816,277 | 1 | ⚠️ polished using <50% read cov |
 
 ## Development
 

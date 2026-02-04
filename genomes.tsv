@@ -1,21 +1,21 @@
-accession	abbreviation	name	category	type	pool	segmented	status
-AC_000017.1	AdV-1	Adenovirus Type 1	dna-virus	DNA	1	no	complete
-DQ099432.4	AdV-3	Adenovirus Type 3	dna-virus	DNA	1	no	complete
-AM749299.1	AdV-31	Adenovirus Type 31	dna-virus	DNA	1	no	complete
-KT180555.1	Flu-A-H1N1-NY	Influenza A H1N1 A/NY/02/2009	rna-virus	RNA	1	yes	complete
-KJ609211.1	Flu-A-H3N2	Influenza A H3N2 A/Brisbane/10/07	rna-virus	RNA	1	yes	complete
-CY033629.1	Flu-A-H1N1-NC	Influenza AH1 A/New Caledonia/20/99	rna-virus	RNA	2	yes	complete
-CY018371.1	Flu-B	Influenza B B/Florida/02/06	rna-virus	RNA	2	yes	complete
-OL794390.1	HMPV	Metapneumovirus 8 Peru6-2003	rna-virus	RNA	1	no	complete
-PV660323.1	HPIV-1	Parainfluenza Type 1	rna-virus	RNA	1	no	complete
-AF533012.1	HPIV-2	Parainfluenza Type 2	rna-virus	RNA	2	no	complete
-KY674922.1	HPIV-3	Parainfluenza Type 3	rna-virus	RNA	2	no	complete
-EU627591.1	HPIV-4	Parainfluenza Type 4	rna-virus	RNA	1	no	partial
-KC894166.1	HRV-1A	Rhinovirus 1A	rna-virus	RNA	1	no	complete
-KY967364.1	RSV-A	RSV A	rna-virus	RNA	2	no	complete
-ON311149.1	SARS-CoV-2	SARS-CoV-2 USA-WA1/2020	rna-virus	RNA	1	no	complete
-OZ035244.1	HCoV-229E	Coronavirus 229E	rna-virus	RNA	2	no	complete
-NZ_CP020655.1	Bpara	Bordetella parapertussis A747	bacteria	DNA	2	no	partial
-CP046993.1	Bpert	Bordetella pertussis A639	bacteria	DNA	2	no	partial
-AE001363.1	Cpneu	Chlamydia pneumoniae IOL-207	bacteria	DNA	1	no	partial
-U00089.2	Mpneu	Mycoplasma pneumoniae M129	bacteria	DNA	1	no	partial
+abbreviation	name	category	genome	pool	segmented	status	accession
+AdV-1	Adenovirus Type 1	dna-virus	dna	1	false	complete	AC_000017.1
+AdV-3	Adenovirus Type 3	dna-virus	dna	1	false	complete	DQ099432.4
+AdV-31	Adenovirus Type 31	dna-virus	dna	1	false	complete	AM749299.1
+Flu-A-H1N1-NY	Influenza A H1N1 A/NY/02/2009	rna-virus	rna	1	true	complete	KT180555.1
+Flu-A-H3N2	Influenza A H3N2 A/Brisbane/10/07	rna-virus	rna	1	true	complete	KJ609211.1
+Flu-A-H1N1-NC	Influenza AH1 A/New Caledonia/20/99	rna-virus	rna	2	true	complete	CY033629.1
+Flu-B	Influenza B B/Florida/02/06	rna-virus	rna	2	true	complete	CY018371.1
+HMPV	Metapneumovirus 8 Peru6-2003	rna-virus	rna	1	false	complete	OL794390.1
+HPIV-1	Parainfluenza Type 1	rna-virus	rna	1	false	complete	PV660323.1
+HPIV-2	Parainfluenza Type 2	rna-virus	rna	2	false	complete	AF533012.1
+HPIV-3	Parainfluenza Type 3	rna-virus	rna	2	false	complete	KY674922.1
+HPIV-4	Parainfluenza Type 4	rna-virus	rna	1	false	partial	EU627591.1
+HRV-1A	Rhinovirus 1A	rna-virus	rna	1	false	complete	KC894166.1
+RSV-A	RSV A	rna-virus	rna	2	false	complete	KY967364.1
+SARS-CoV-2	SARS-CoV-2 USA-WA1/2020	rna-virus	rna	1	false	complete	ON311149.1
+HCoV-229E	Coronavirus 229E	rna-virus	rna	2	false	complete	OZ035244.1
+Bpara	Bordetella parapertussis A747	bacteria	dna	2	false	partial	NZ_CP020655.1
+Bpert	Bordetella pertussis A639	bacteria	dna	2	false	partial	CP046993.1
+Cpneu	Chlamydia pneumoniae IOL-207	bacteria	dna	1	false	partial	AE001363.1
+Mpneu	Mycoplasma pneumoniae M129	bacteria	dna	1	false	partial	U00089.2

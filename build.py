@@ -44,19 +44,19 @@ def write_fasta(path: Path, sequences: list[tuple[str, str]]) -> None:
 
 
 def load_metadata(path: Path) -> dict[str, dict]:
-    """Load genome metadata from TSV file, keyed by accession."""
+    """Load genome metadata from TSV file, keyed by abbreviation."""
     genomes = {}
     with open(path) as f:
         for row in csv.DictReader(f, delimiter='\t'):
-            genomes[row['accession']] = row
+            genomes[row['abbreviation']] = row
     return genomes
 
 
-def get_genome_path(accession: str, metadata: dict) -> Path:
+def get_genome_path(abbreviation: str, metadata: dict) -> Path:
     """Return path to genome file based on whether it's segmented."""
-    if metadata['segmented'] == 'yes':
-        return Path('genomes/segmented') / f"{accession}.fa"
-    return Path('genomes') / f"{accession}.fa"
+    if metadata['segmented'] == 'true':
+        return Path('genomes/segmented') / f"{abbreviation}.fa"
+    return Path('genomes') / f"{abbreviation}.fa"
 
 
 def main():
@@ -70,9 +70,9 @@ def main():
     # Collect rna-virus segments separately
     rna_virus_segments = []
 
-    for accession, info in metadata.items():
-        path = get_genome_path(accession, info)
-        is_segmented = info['segmented'] == 'yes'
+    for abbreviation, info in metadata.items():
+        path = get_genome_path(abbreviation, info)
+        is_segmented = info['segmented'] == 'true'
         sequences = read_fasta(path, sort_segments=is_segmented)
 
         # Add all individual sequences to segments version
@@ -85,8 +85,10 @@ def main():
         if is_segmented:
             # Merge all segments into single sequence
             first_header = sequences[0][0]
+            # Strip segment number from merged header
+            merged_header = re.sub(r'-\d+$', '', first_header)
             merged_seq = ''.join(seq for _, seq in sequences)
-            combined_sequences.append((first_header, merged_seq))
+            combined_sequences.append((merged_header, merged_seq))
         else:
             # Non-segmented: add as-is
             combined_sequences.extend(sequences)
@@ -122,9 +124,9 @@ def main():
     }
 
     for header, seq in combined_sequences:
-        # Extract accession from header (format: ">ACCESSION ABBREV" or ">ACCESSION ABBREV-N")
-        accession = header[1:].split()[0]
-        info = metadata[accession]
+        # Extract abbreviation from header (format: ">ABBREV")
+        abbreviation = header[1:].split()[0]
+        info = metadata[abbreviation]
         category = category_map[info['category']]
         category_sequences[category].append((header, seq))
 
